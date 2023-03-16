@@ -2,7 +2,7 @@ import { PostForm,HomePage,NotFoundPage } from './pages';
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import {PostProvider} from './context/PostContext';
-
+import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <div className="bg-neutral-900 min-h-screen flex
@@ -15,6 +15,7 @@ function App() {
         <Route path='/*' element={<NotFoundPage/>}></Route>
  
       </Routes>
+      <Toaster/>
       </PostProvider>
       </div>
      

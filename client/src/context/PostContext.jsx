@@ -2,7 +2,7 @@
 // renderiza toda la app en childen
 
 import { useState, createContext, useContext,useEffect } from "react";
-import {getPostsRequests} from '../api/posts'
+import {createPostRequest, getPostsRequests} from '../api/posts'
 const postContext = createContext();
 
 export const usePosts = () => {
@@ -17,8 +17,14 @@ export const PostProvider = ({ children }) => {
   const getPosts = async () =>{
    const res =  await getPostsRequests()
    setPosts(res.data)
-  // setPosts([]) para probar no hay publicaciones
-   console.log(posts)
+
+  }
+  
+
+  const createPost = async (post) =>{
+    const res = await createPostRequest(post)
+    setPosts([...posts,res.data])
+    
   }
 
   useEffect(() => {
@@ -29,7 +35,8 @@ export const PostProvider = ({ children }) => {
     <postContext.Provider
       value={{
         posts,
-        getPosts
+        getPosts,
+        createPost
       }}
     >
       {children}
