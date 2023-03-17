@@ -17,8 +17,11 @@ function HomePage() {
   }
   return (
     <div className="text-white">
+      <header className="flex justify-between py-4 ">
+        <h1 className="text-2xl text-gray-300 font-bold">Posts({posts.length})</h1>
+      </header>
       <Link to="/new">Crear nueva publicación</Link>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-4">
         {posts.map((post) => (
           <PostCards post={post} key={post._id} />
         ))}
