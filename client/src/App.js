@@ -9,6 +9,7 @@ function App() {
     <div className="bg-neutral-900 min-h-screen flex
     items-center">
       <div className="px-10 container m-auto ">
+        
       <PostProvider>
       <Routes>
         <Route path='/' element={<HomePage/>}></Route>

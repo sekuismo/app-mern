@@ -18,9 +18,10 @@ function HomePage() {
   return (
     <div className="text-white">
       <header className="flex justify-between py-4 ">
-        <h1 className="text-2xl text-gray-300 font-bold">Posts({posts.length})</h1>
+        <h1 className="text-2xl text-gray-300 font-bold">Posts({posts.length})🐱</h1>
       </header>
-      <Link to="/new">Crear nueva publicación</Link>
+      <Link to="/new" className="  px-5 py-1 mb-5 bg-indigo-500 text-white hover:bg-indigo-600 "> Crear nueva publicación </Link>
+      <br /><br />
       <div className="grid grid-cols-3 gap-4">
         {posts.map((post) => (
           <PostCards post={post} key={post._id} />
